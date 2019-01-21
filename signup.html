@@ -3,7 +3,7 @@
   <link src=".png" rel="icon">
   <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"  />
 
-  <title>SelfieLess</title>
+  <title>Selfieless</title>
   <style>
   footer {
     padding: 1em;
@@ -160,57 +160,31 @@ span.psw {
 </style>
 
 </head>
-<body>
-
-<!--user login -->
-<div id="id01" class="modal">
-  <form class="modal-content animate" action="login.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="fid"><b>Faculty Id </b></label>
-      <input type="text" placeholder="Enter Username" name="fid" required>
-      <label for="pwd"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="pwd" required>
-      <button type="submit">Login</button>
-    </div>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <a href="signup.html">signup</a>
-      <a href="forgot.html">forgot</a>
-    </div>
-  </form>
-</div>
+<body style="background-color:grey;">
 
 
 <!--navigation bar-->
-<ul>
-    <div>
-    <li><a href ="index.html">Home</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    
 
-      <li><a href="gallery.html">Gallery</a></li>
-      <li  style="padding-left:100px;font-size:50px;"><strong><span style="color:green;">SelfieLess</span><span style="color:grey;">Acts</span></strong></li>
-    </div>
-  <div style="padding-left:250px;">
-        <li><a href="https://www.facebook.com/Askbook-699887716878821/"><img src="images/facebook.png" title="facebook" /></a></li>
-        <li><a href="https://www.twitter.com"><img src="images/twitter.png" title="twitter" /></a></li>
-        <li ><a href="https://plus.google.com/100118310135288745298"><img src="images/google.png" title="google pluse" /></a></li>
-    </div>
-    <button onclick="document.getElementById('id01').style.display='block'" style="float:right;width:auto;">Login</button>
-  </ul>
-      <div>
-        <div><img style="width:1300" class="mySlides" src="images/bus1.jpg"></div>
-        <div><img style="width:1300" class="mySlides" src="images/bus2.jpg"></div>
-        <div><img  style="width:1300" class="mySlides" src="images/bus1.jpg"></div>
+
+
+  <!--password reset for student-->
+    <form class="modal-content animate" action="signup.php" method="post">
+      <div class="imgcontainer">
+
+        <img src="images/img_avatar3.png" alt="Avatar" class="avatar">
       </div>
-
-
-
+        <div class="container">
+        <label for="phone"><b>phone</b></label>
+        <input type="text" placeholder="Enter phone Number" name="phone" required>
+        <label for="pwd"><b>New Password</b></label>
+        <input type="password" placeholder="Enter Password" name="pwd" required>
+        <label for="cpwd"><b>confirm Password</b></label>
+        <input type="password" placeholder="Enter Password" name="cpwd" required>
+        <button type="submit">signup</button>
+      </div>
+      </div>
+    </form>
+  </div>
 
   <script>
       // Get the modal
@@ -222,28 +196,9 @@ span.psw {
           }
       }
       
-      var myIndex = 0;
-     slideshow();
-
-    function slideshow() {
-     var i;
-     var x = document.getElementsByClassName("mySlides");
-
-
-   for (i = 0; i < x.length; i++) {
-
-      x[i].style.display = "none";
-
-   }
-
-   myIndex++;
-   if (myIndex > x.length) {myIndex = 1}
-   x[myIndex-1].style.display = "block";
-
-   setTimeout(slideshow, 1500);
-}
 
       </script>
-<footer>Copyright &copy; selfielessacts</footer>
+<footer>Copyright &copy;SelfielessActs</footer>
 </body>
 </html>
+
