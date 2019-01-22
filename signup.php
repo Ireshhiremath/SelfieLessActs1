@@ -54,15 +54,32 @@
 			}
 			else
 			{
-					$query="INSERT INTO USER(pho_num,pass) VALUES ($number,'$password')";
-					$res=mysqli_query($conn,$query);
+					$query="INSERT INTO USER VALUES ('$number','$password')";
+                    
+                    $res=mysqli_query($conn,$query);
 					if(!$res)
-					{
+					{?>
+                                                <script>
+                        alert("Not updated.");
+                        </script>
+                        <?php
 						 include "signup.html";
 					}
 					else
 					{
-						 include "user-dashboard.html";
+                        ?>
+                        <html>
+                            <body>
+                                <h2><?php echo $number ?></h2>
+                                <h2><?php echo $password ?></h2>
+                    </body>
+                    </html>
+
+                        <script>
+                        alert(" updated.");
+                        </script><?php
+					
+						 //include "user-dashboard.html";
 					}
 			 }
 		 }

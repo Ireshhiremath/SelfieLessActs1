@@ -3,7 +3,10 @@
   <link src=".png" rel="icon">
   <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"  />
 
-  <title>SelfieLess</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+  <title>Selfieless</title>
   <style>
   footer {
     padding: 1em;
@@ -50,13 +53,14 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: grey;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 100px;
+    
 }
 
 button:hover {
@@ -160,57 +164,30 @@ span.psw {
 </style>
 
 </head>
-<body>
+<body style="background-color:grey;">
 
-<!--user login -->
-<div id="id01" class="modal">
-  <form class="modal-content animate" action="login.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="phone"><b>Phone Number </b></label>
-      <input type="text" placeholder="Enter Username" name="phone" required>
-      <label for="pass"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="pass" required>
-      <button type="submit">Login</button>
-    </div>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <a href="signup.html">signup</a>
-      <a href="forgot.html">forgot</a>
-    </div>
-  </form>
-</div>
-
-
-<!--navigation bar-->
-<ul>
-    <div>
-    <li><a href ="index.html">Home</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    
-
-      <li><a href="gallery.html">Gallery</a></li>
-      <li  style="padding-left:100px;font-size:50px;"><strong><span style="color:green;">SelfieLess</span><span style="color:grey;">Acts</span></strong></li>
-    </div>
-  <div style="padding-left:250px;">
-        <li><a href="https://www.facebook.com/Askbook-699887716878821/"><img src="images/facebook.png" title="facebook" /></a></li>
-        <li><a href="https://www.twitter.com"><img src="images/twitter.png" title="twitter" /></a></li>
-        <li ><a href="https://plus.google.com/100118310135288745298"><img src="images/google.png" title="google pluse" /></a></li>
-    </div>
-    <button onclick="document.getElementById('id01').style.display='block'" style="float:right;width:auto;">Login</button>
-  </ul>
-      <div>
-        <div><img style="width:1300" class="mySlides" src="images/bus1.jpg"></div>
-        <div><img style="width:1300" class="mySlides" src="images/bus2.jpg"></div>
-        <div><img  style="width:1300" class="mySlides" src="images/bus1.jpg"></div>
+  <!--password reset for student-->
+    <form class="modal-content animate" action="upload.php" method="post">
+      <div class="imgcontainer">
+        <img src="./gallery/boy.jpg" style = "width: 140px;height: 140px;" salt="Avatar" class="w3-circle">
       </div>
+        <div class="container">
+                <select class="w3-select w3-border" name="option">
+                <option value="" disabled selected>Choose your category</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+              <div style="margin-top:10px;">
+              <input type="file" name="image" placeholder="Choose Image" required>
+            </div>
+              <p><input class="w3-input w3-border w3-hover-blue" placeholder="Write Something about the image" type="text" name="caption" ></p>
 
-
-
+        <button type="submit">upload</button>
+        </div>
+      </div>
+    </form>
+  </div>
 
   <script>
       // Get the modal
@@ -222,28 +199,9 @@ span.psw {
           }
       }
       
-      var myIndex = 0;
-     slideshow();
-
-    function slideshow() {
-     var i;
-     var x = document.getElementsByClassName("mySlides");
-
-
-   for (i = 0; i < x.length; i++) {
-
-      x[i].style.display = "none";
-
-   }
-
-   myIndex++;
-   if (myIndex > x.length) {myIndex = 1}
-   x[myIndex-1].style.display = "block";
-
-   setTimeout(slideshow, 1500);
-}
 
       </script>
-<footer>Copyright &copy; selfielessacts</footer>
+<footer>Copyright &copy;SelfielessActs</footer>
 </body>
 </html>
+
