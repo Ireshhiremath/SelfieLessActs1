@@ -1,6 +1,6 @@
 <html>
 <body>
-<form method="post" enctype="multipart/form-data">
+<form method="post" >
 <input type="file" name="image"/>
 <input type="submit" name="submit" value="Upload"/>
 </form>
@@ -23,7 +23,7 @@
     function saveimage($image,$text)
     {
         $dbcon=mysqli_connect('localhost','root','','selfieless');
-        $qry="insert into images (name,caption) values ('$image','$text')";
+        $qry="insert into imagefile (name,caption,categoty,user) values ('$image','$text')";
         $result=mysqli_query($dbcon,$qry);
         if($result)
         {

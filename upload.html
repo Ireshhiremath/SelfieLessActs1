@@ -167,23 +167,24 @@ span.psw {
 <body style="background-color:grey;">
 
   <!--password reset for student-->
-    <form class="modal-content animate" action="upload.php" method="post">
+    <form class="modal-content animate" action="upload.php" method="post" enctype="multipart/form-data">
       <div class="imgcontainer">
         <img src="./gallery/boy.jpg" style = "width: 140px;height: 140px;" salt="Avatar" class="w3-circle">
       </div>
         <div class="container">
-                <select class="w3-select w3-border" name="option">
+                <select class="w3-select w3-border" name="category">
                 <option value="" disabled selected>Choose your category</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                <option value="Technology">Technology</option>
+                <option value="Nature">Nature</option>
+                <option value="Animals">Animals</option>
+                <option value="Trees">Trees</option>
               </select>
               <div style="margin-top:10px;">
               <input type="file" name="image" placeholder="Choose Image" required>
             </div>
               <p><input class="w3-input w3-border w3-hover-blue" placeholder="Write Something about the image" type="text" name="caption" ></p>
 
-        <button type="submit">upload</button>
+        <button type="submit" name="submit" value="upload">upload</button>
         </div>
       </div>
     </form>
