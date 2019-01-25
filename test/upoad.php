@@ -23,7 +23,7 @@
     function saveimage($image,$text)
     {
         $dbcon=mysqli_connect('localhost','root','','selfieless');
-        $qry="insert into imagefile (name,caption,categoty,user) values ('$image','$text')";
+        $qry="insert into imagefile (name,caption1) values ('$image','$text')";
         $result=mysqli_query($dbcon,$qry);
         if($result)
         {

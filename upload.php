@@ -4,12 +4,13 @@
      
      if(getimagesize($_FILES['image']['tmp_name'])==FALSE)
      {
+         echo "this error";
         echo " error ";
      }
      else
      {	
         
-        $user = "7349478887";
+        $user = $_POST["user"];
         $text = $_POST["caption"];
         $category = $_POST["category"];
         $image = $_FILES['image']['tmp_name'];
@@ -22,7 +23,7 @@
     {
         
         $dbcon=mysqli_connect('localhost','root','','selfieless');
-        $qry="insert into images (name,caption,category,user) values ('$image','$text',$category,$user)";
+        $qry="insert into images (name,caption,category,user) values ('$image','$text','$category','$user')";
         $result=mysqli_query($dbcon,$qry);
         
         
