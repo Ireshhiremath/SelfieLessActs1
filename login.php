@@ -12,7 +12,7 @@
 	{
 		// echo "connection estsblished successfully";
 		$number=$_POST["phone"];
-		$password=$_POST["pass"];
+		$password=$_POST["pwd"];
 
 		$query="SELECT u.pho_num,u.pass FROM USER as u";
 		$res=mysqli_query($conn,$query);

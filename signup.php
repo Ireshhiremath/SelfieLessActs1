@@ -77,9 +77,10 @@
 
                         <script>
                         alert(" updated.");
+						
                         </script><?php
 					
-						 //include "user-dashboard.html";
+						 include "user-dashboard.html";
 					}
 			 }
 		 }
