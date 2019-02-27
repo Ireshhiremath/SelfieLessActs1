@@ -20,9 +20,9 @@ def index():
 def adduser():
     if request.method == 'POST':
         content = request.get_json()
-        uname = content['un']
+        uname = content['username']
         uname1 = str(uname) 
-        pass0 =  content['pwd']
+        pass0 =  content['password']
         pass1 = hashlib.sha1(pass0.encode())
         #pass1 = sha1_crypt.encrypt(pass0)
         bg =  content['blood']
