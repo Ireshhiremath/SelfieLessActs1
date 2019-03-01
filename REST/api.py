@@ -7,7 +7,7 @@ import base64
 #SHA1 : The 160 bit hash function that resembles MD5 hash in working and was discontinued to be used seeing its security vulnerabilities.
 app = Flask(__name__, static_url_path='/static')
 
-mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'password', auth_plugin = 'mysql_native_password', database = 'selflessacts1')
+mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password', database = 'test')
 mycursor = mydb.cursor()
 
 #Home page
@@ -20,20 +20,11 @@ def index():
 def adduser():
     if request.method == 'POST':
         content = request.get_json()
-        uname = content['username']
-        uname1 = str(uname) 
-        pass0 =  content['password']
-        pass1 = hashlib.sha1(pass0.encode())
-        #pass1 = sha1_crypt.encrypt(pass0)
-        bg =  content['blood']
-        email1 =  content['email']
-        phono =  content['phno']
-        gen =  content['gender']
-        dob =  content['DOB']
-        age =  content['age']
-        fname1 =  content['fname']
-        lname1 =  content['lname']
-        add1 =  content['add']         
+	    uname = content['username']
+	    uname1 = str(uname) 
+	    pass0 =  content['password']
+	    pass1 = hashlib.sha1(pass0.encode())
+	    pass2 = str(pass1)
         sql = "SELECT username FROM users Where username = %s"
         rows = mycursor.execute(sql, (uname1, ))
         rows = mycursor.fetchone()
@@ -50,8 +41,8 @@ def adduser():
                 response = app.response_class(response=json.dumps({}), status=400, mimetype='application/json')
                 
         else:
-            query = "INSERT INTO users (username, passwd, fname, lname, email, phoneno, Gender, Age, DoB, BloodG, Address) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-            iodata = (uname1,pass1,fname1,lname1,email1,phono,gen,age,dob,bg,add1)
+            query = "INSERT INTO users (username, password) VALUES(%s,%s)"
+            iodata = (uname1,pass2)
             mycursor.execute(query, (iodata))
             mydb.commit()
             response = app.response_class(response=json.dumps({}), status=201, mimetype='application/json')
