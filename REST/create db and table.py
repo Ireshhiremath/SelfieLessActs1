@@ -1,10 +1,10 @@
 import mysql.connector
 
-mydb2 = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'Dell.N5559', auth_plugin = 'mysql_native_password')
+mydb2 = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password')
 mycursor2 = mydb2.cursor()
-mycursor2.execute("DROP DATABASE IF EXISTS selflessacts2")
-mycursor2.execute("CREATE DATABASE selflessacts2")
-mydb1 = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'Dell.N5559', auth_plugin = 'mysql_native_password', database = 'selflessacts2')
+mycursor2.execute("DROP DATABASE IF EXISTS selflessacts3")
+mycursor2.execute("CREATE DATABASE selflessacts3")
+mydb1 = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password', database = 'selflessacts3')
 
 mycursor1 = mydb1.cursor()
 mycursor1.execute("""DROP TABLE IF EXISTS acts""")

@@ -11,7 +11,7 @@ import time
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = 'Selflessact'
 
-mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'Dell.N5559', auth_plugin = 'mysql_native_password', database = 'selflessacts2')
+mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password', database = 'selflessacts3')
 mycursor = mydb.cursor()
 
 
