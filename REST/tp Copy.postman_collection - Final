@@ -90,7 +90,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " { \r\n\"actid\": 1, \r\n \"username\": \"akilesh18\", \r\n\"timestamp\": \"03-05-1999:59-59-23\", \r\n \"caption\": \"caption text\", \r\n \"categoryName\": \"['Road']\", \r\n  \"imgB64\": \"TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvb\"\r\n} "
+					"raw": " { \r\n\"actid\": 2, \r\n \"username\": \"akilesh18\", \r\n\"timestamp\": \"03-05-1999:59-59-23\", \r\n \"caption\": \"caption text\", \r\n \"categoryName\": \"Road\", \r\n  \"imgB64\": \"TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvb\"\r\n} "
 				},
 				"url": {
 					"raw": "127.0.0.1:5000/api/v1/acts",
@@ -124,7 +124,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"actid\":1\n}"
+					"raw": "[\n\t2\n]"
 				},
 				"url": {
 					"raw": "127.0.0.1:5000/api/v1/acts/upvote",
@@ -328,7 +328,7 @@
 					"raw": "{\n\t\n}"
 				},
 				"url": {
-					"raw": "127.0.0.1:5000/api/v1/users/akilesh",
+					"raw": "127.0.0.1:5000/api/v1/users/akilesh18",
 					"host": [
 						"127",
 						"0",
@@ -340,7 +340,7 @@
 						"api",
 						"v1",
 						"users",
-						"akilesh"
+						"akilesh18"
 					]
 				}
 			},

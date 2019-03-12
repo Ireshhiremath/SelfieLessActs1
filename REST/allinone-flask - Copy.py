@@ -11,7 +11,7 @@ import time
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = 'Selflessact'
 
-mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password', database = 'selflessacts3')
+mydb = mysql.connector.connect(host = "localhost", port = 3306, user = 'root', password = 'sagar', auth_plugin = 'mysql_native_password', database = 'selflessacts2')
 mycursor = mydb.cursor()
 
 
@@ -251,7 +251,7 @@ def listnoactscat(categoryName):
 def upvoteact():
     if request.method == 'POST':
         content1 = request.get_json()
-        actid = int(content1['actid'])
+        actid = int(content1[0])
         mycursor.execute("SELECT votes FROM acts WHERE actid = %s", (actid, ))
         n = mycursor.fetchone()
         if(n):
@@ -301,11 +301,11 @@ def uploadact():
         imgB64 = data['imgB64']
         #image = request.files['imgB64']  
         #image_string = base64.b64encode(image.read())
-        cat6 = mycursor.execute("SELECT catno FROM category WHERE category.categoryName = %s", (catname, ))
+        mycursor.execute("SELECT catno FROM category WHERE category.categoryName = %s", (catname, ))
         cat6 = mycursor.fetchone()
-        cat15 = mycursor.execute("SELECT username FROM users WHERE username = %s", (uname2, ))
+        mycursor.execute("SELECT username FROM users WHERE username = %s", (uname2, ))
         cat15 = mycursor.fetchone()
-        if(cat6[0] and cat15[0]):
+        if(cat6 and cat15):
             cat12 = mycursor.execute("SELECT actid FROM acts WHERE actid = %s", (actid, ))
             cat12 = mycursor.fetchone()
             if(not cat12):
